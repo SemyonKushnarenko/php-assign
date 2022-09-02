@@ -28,7 +28,3 @@ class Task2
         return $res;
     }
 }
-
-$task2 = new Task2();
-
-print_r($task2->main('02.09.2022'));
