@@ -10,10 +10,14 @@ class Task8
     public function main(string $inputStr)
     {
         if (!is_string($inputStr)) {
-            throw new InvalidArgumentException('You must input string value');
+            throw new InvalidArgumentException('You must input json string value');
         }
 
         $obj = json_decode($inputStr);
+
+        if (!$obj) {
+            throw new InvalidArgumentException('You must input json string value');
+        }
 
 
         return $this->objToStr($obj);
