@@ -8,7 +8,7 @@ class Task10
 {
     public function main(int $input): array
     {
-        if (!is_int($input)) {
+        if ($input > -1) {
             throw new InvalidArgumentException('You must input integer value');
         }
 
@@ -31,7 +31,3 @@ class Task10
         }
     }
 }
-
-$task = new Task10();
-
-print_r($task->main(12));
