@@ -8,7 +8,7 @@ class Task7
 {
     public function main(array $inputArr, int $position): array
     {
-        if (!is_array($inputArr) || !is_int($position)) {
+        if (!count($inputArr) || $position > count($inputArr)) {
             throw new InvalidArgumentException('You must input array and position of the element of this array');
         }
 
