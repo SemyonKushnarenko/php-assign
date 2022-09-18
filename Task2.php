@@ -9,7 +9,7 @@ class Task2
 {
     public function main(string $dateStr)
     {
-        $format = 'd.m.Y';
+        $format = 'd-m-Y';
         $d = DateTime::createFromFormat($format, $dateStr);
 
         if (!($d && $d->format($format) === $dateStr)) {
