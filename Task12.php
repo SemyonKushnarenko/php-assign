@@ -7,14 +7,11 @@ use InvalidArgumentException;
 class MyCalculator
 {
     private $res = 0;
-    private int $a;
-    private int $b;
+    private $a;
+    private $b;
 
-    public function __construct($a, $b)
+    public function __construct(int $a, int $b)
     {
-        if (!is_int($a) || !is_int($b)) {
-            throw new InvalidArgumentException('You must input two integer values into instantiation of class');
-        }
         $this->a = $a;
         $this->b = $b;
     }
@@ -22,23 +19,31 @@ class MyCalculator
     {
         return $this->res;
     }
-    public function add()
+    public function add(int $summar = null)
     {
-        $this->res = $this->a + $this->b;
+        if ($summar) {
+            $this->res += $summar;
+        } else {
+            $this->res = $this->a + $this->b;
+        }
 
         return $this;
     }
 
-    public function multiply()
+    public function multiply(int $prov = null)
     {
-        $this->res = $this->a * $this->b;
+        if ($prov) {
+            $this->res += $prov;
+        } else {
+            $this->res = $this->a + $this->b;
+        }
 
         return $this;
     }
 
     public function divideBy(int $div)
     {
-        if (!is_int($div)) {
+        if (!$div) {
             throw new InvalidArgumentException('You must input integer value into divideBy');
         }
         $this->res = $this->res / $div;
@@ -46,9 +51,13 @@ class MyCalculator
         return $this;
     }
 
-    public function substract()
+    public function substract(int $summar = null)
     {
-        $this->res = $this->a - $this->b;
+        if ($summar) {
+            $this->res += $summar;
+        } else {
+            $this->res = $this->a - $this->b;
+        }
 
         return $this;
     }
