@@ -36,6 +36,3 @@ class Task8
         return implode(PHP_EOL, $this->str);
     }
 }
-
-$task = new Task8();
-print_r($task->main('{"dsa": "sda", "qefvw": {"qe":"a"}}'));
