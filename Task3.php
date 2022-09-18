@@ -8,7 +8,7 @@ class Task3
 {
     public function main(int $inputNumber): int
     {
-        if (!is_int($inputNumber)) {
+        if ($inputNumber >= 0) {
             throw new InvalidArgumentException('You must input integer value');
         }
 
