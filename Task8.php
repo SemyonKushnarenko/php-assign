@@ -6,7 +6,7 @@ use InvalidArgumentException;
 
 class Task8
 {
-    public $str = '';
+    public $str = [];
     public function main(string $inputStr)
     {
         if (!is_string($inputStr)) {
@@ -27,12 +27,15 @@ class Task8
     {
         foreach ($obj as $key => $value) {
             if (is_string($value)) {
-                $this->str = $this->str . "$key: $value<br>";
+                $this->str[] = "$key: $value";
             } else {
-                $this->str = $this->objToStr($value);
+                $this->objToStr($value);
             }
         }
 
-        return $this->str;
+        return implode(PHP_EOL, $this->str);
     }
 }
+
+$task = new Task8();
+print_r($task->main('{"dsa": "sda", "qefvw": {"qe":"a"}}'));
