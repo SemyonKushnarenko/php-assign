@@ -8,7 +8,7 @@ class Task9
 {
     public function main(array $inputArr, int $sum): array
     {
-        if (!is_array($inputArr) || !is_int($sum)) {
+        if (count($inputArr) < 3) {
             throw new InvalidArgumentException('You must input array of numbers, and an integer value');
         }
 
@@ -26,7 +26,3 @@ class Task9
         return $res;
     }
 }
-
-$task = new Task9();
-
-print_r($task->main([1, 2, 1, 1, 2, 1], 4));
